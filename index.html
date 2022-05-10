@@ -26,14 +26,21 @@
 
         }
 
-        table {
+        .container>div {
             height: 50%;
             width: 100%;
             border-collapse: collapse;
         }
 
-        tr {
+        table {
             width: 100%;
+            height: 100%;
+        }
+
+        #fisrt_half {
+            border-bottom-width: 0.1px;
+            border-bottom-color: #eee;
+            border-bottom-style: dashed;
         }
 
         td {
@@ -45,8 +52,8 @@
 
 <body>
     <div class="container">
-        <table id="plus"></table>
-        <table id="minus"></table>
+        <div id="fisrt_half"></div>
+        <div id="second_half"></div>
     </div>
     <script>
         const getRandomInt = (min, max) => {
@@ -54,7 +61,7 @@
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min)) + min;
         }
-        
+
         const plus = () => {
             let a = getRandomInt(1, 10);
             let b = getRandomInt(1, 10);
@@ -63,7 +70,7 @@
             }
             return [a, b];
         }
-        
+
         const minus = () => {
             let a = getRandomInt(2, 11);
             let b = getRandomInt(1, 10);
@@ -72,8 +79,8 @@
             }
             return [a, b];
         }
-        
-        const fiveInRow = (type) => {
+
+        const creatRow = type => {
             const row = document.createElement('tr');
             for (let i = 0; i < 5; i++) {
                 const cell = document.createElement('td');
@@ -89,16 +96,21 @@
             }
             return row;
         }
-        
-        const table_plus = document.querySelector('#plus');
-        for (let i = 0; i < 10; i++) {
-            table_plus.appendChild(fiveInRow('plus'));
+
+        const creatTable = () => {
+            const table = document.createElement('table');
+            for (let i = 0; i < 4; i++) {
+                table.appendChild(creatRow('plus'));
+            }
+            for (let i = 0; i < 6; i++) {
+                table.appendChild(creatRow('minus'));
+            }
+            return table;
         }
-        const table_minus = document.querySelector('#minus');
-        for (let i = 0; i < 10; i++) {
-            table_minus.appendChild(fiveInRow('minus'));
-        }
-        
+
+        document.querySelector('#fisrt_half').appendChild(creatTable());
+        document.querySelector('#second_half').appendChild(creatTable());
+
     </script>
 </body>
 
