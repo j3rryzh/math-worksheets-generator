@@ -1,19 +1,58 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { addiction, subtraction } from './math_operations'
 import './index.css'
 
-export default class Td extends Component {
-    render() {
-        const { operation } = this.props
-        if (operation === 'addiction') {
-            const [a, b] = addiction();
-            return (
-                <td>{a} + {b} =</td>
-            )
-        }
-        const [a, b] = subtraction();
-        return (
-            <td>{a} - {b} =</td>
-        )
-    }
+// class Td extends React.Component {
+//     render() {
+//         const { operation } = this.props
+//         const addictionSettings = {
+//             x: { min: 0, max: 10 },
+//             y: { min: 0, max: 10 },
+//             carrying: false
+//         }
+//         const subtractionSettings = {
+//             x: { min: 0, max: 10 },
+//             y: { min: 0, max: 10 },
+//             borrowing: false
+//         }
+//         if (operation === 'addiction') {
+//             const { x, y } = addiction(addictionSettings);
+//             return (
+//                 <td>{x} + {y} =</td>
+//             )
+//         }
+//         if (operation === 'subtraction') {
+//             const { x, y } = subtraction();
+//             return (
+//                 <td>{x} - {y} =</td>
+//             )
+//         }
+//     }
+// }
+
+export default function Td(props) {
+  const { operation } = props
+  const addictionSettings = {
+    x: { min: 1, max: 9999 },
+    y: { min: 20, max: 199 },
+    carrying: false
+  }
+  const subtractionSettings = {
+    x: { min: 0, max: 199 },
+    y: { min: 0, max: 199 },
+    borrowing: false
+  }
+  if (operation === 'addiction') {
+    const { x, y } = addiction(addictionSettings);
+    return (
+      <td>{x} + {y} =</td>
+    )
+  }
+  if (operation === 'subtraction') {
+    const { x, y } = subtraction(subtractionSettings);
+    return (
+      <td>{x} - {y} =</td>
+    )
+  }
 }
+

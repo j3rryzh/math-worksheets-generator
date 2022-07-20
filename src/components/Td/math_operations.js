@@ -1,37 +1,67 @@
 const getRandomInt = (min, max) => {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min)) + min
+  min = Math.ceil(min)
+  max = Math.floor(max) + 1
+  return Math.floor(Math.random() * (max - min)) + min
 }
 
+const isCarrying = (x, y) => {
+  let carrying = false
+  for (let i = 0; i < (x > y ? x.toString().length : y.toString().length); i++) {
+    if ((x % (10 ** (i + 1)) - x % (10 ** i)) / 10 ** i + (y % (10 ** (i + 1)) - y % (10 ** i)) / 10 ** i >= 10) {
+      carrying = true
+    }
+  }
+  return carrying
+}
 
+const isBorrowing = (x, y) => {
+  let borrowing = false
+  for (let i = 0; i < (x > y ? x.toString().length : y.toString().length); i++) {
+    if (x % (10 ** (i + 1)) < y % (10 ** (i + 1))) {
+      borrowing = true
+    }
+  }
+  return borrowing
+}
 
 const addiction = (settings) => {
-    const { x: { xMin, xMax }, y: { yMin, yMax }, carry } = settings
-    if (carry) {
-        let x = getRandomInt(xMin, xMax)
-        let y = getRandomInt(yMin, yMax)
-
-        return { x, y }
+  const { x: { min: xMin, max: xMax }, y: { min: yMin, max: yMax }, carrying } = settings
+  let x = getRandomInt(xMin, xMax)
+  let y = getRandomInt(yMin, yMax)
+  if (carrying) {
+    while (!isCarrying(x, y)) {
+      x = getRandomInt(xMin, xMax)
+      y = getRandomInt(yMin, yMax)
     }
-    else { }
-
-
-    let a = getRandomInt(1, 10)
-    let b = getRandomInt(1, 10)
-    while (b + a > 10) {
-        b = getRandomInt(1, 10)
+  }
+  else {
+    while (isCarrying(x, y)) {
+      x = getRandomInt(xMin, xMax)
+      y = getRandomInt(yMin, yMax)
     }
-    return [a, b]
+  }
+  const answer = x + y
+  return { x, y, answer }
 }
 
-const subtraction = () => {
-    let a = getRandomInt(2, 11)
-    let b = getRandomInt(1, 10)
-    while (a < b) {
-        b = getRandomInt(1, 10)
+const subtraction = (settings) => {
+  const { x: { min: xMin, max: xMax }, y: { min: yMin, max: yMax }, borrowing } = settings
+  let x = getRandomInt(xMin, xMax)
+  let y = getRandomInt(yMin, yMax)
+  if (borrowing) {
+    while (!isBorrowing(x, y) || x < y) {
+      x = getRandomInt(xMin, xMax)
+      y = getRandomInt(yMin, yMax)
     }
-    return [a, b]
+  }
+  else {
+    while (isBorrowing(x, y) || x < y) {
+      x = getRandomInt(xMin, xMax)
+      y = getRandomInt(yMin, yMax)
+    }
+  }
+  const answer = x + y
+  return { x, y, answer }
 }
 
 export { addiction, subtraction }

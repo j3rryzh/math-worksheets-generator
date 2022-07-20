@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
-// import css from './index.module.css'
+import React from 'react'
+import css from './index.module.css'
 
-export default class Setting extends Component {
-    render() {
-        return (
-            <div>Settings</div>
-        )
-    }
+export default function Setting() {
+  return (
+    <div className={css.settings_container}>
+      <h2>Settings</h2>
+
+    </div>
+  )
 }
