@@ -24,8 +24,8 @@ const isBorrowing = (x, y) => {
   return borrowing
 }
 
-const addiction = (settings) => {
-  const { x: { min: xMin, max: xMax }, y: { min: yMin, max: yMax }, carrying } = settings
+const addiction = (config) => {
+  const { x: [xMin, xMax], y: [yMin, yMax], carrying } = config
   let x = getRandomInt(xMin, xMax)
   let y = getRandomInt(yMin, yMax)
   if (carrying) {
@@ -44,8 +44,8 @@ const addiction = (settings) => {
   return { x, y, answer }
 }
 
-const subtraction = (settings) => {
-  const { x: { min: xMin, max: xMax }, y: { min: yMin, max: yMax }, borrowing } = settings
+const subtraction = (config) => {
+  const { x: [xMin, xMax], y: [yMin, yMax], borrowing } = config
   let x = getRandomInt(xMin, xMax)
   let y = getRandomInt(yMin, yMax)
   if (borrowing) {
