@@ -10,7 +10,6 @@ export default function App() {
       <Generator />
       <div className={css.worksheetContent}>
         <Worksheet />
-        <Worksheet />
       </div>
     </div>
   )

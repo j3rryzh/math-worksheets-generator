@@ -1,7 +1,8 @@
 import React from 'react'
 import { Layout, Collapse } from 'antd'
-import AddictionPanel from './AddictionPanel'
-import SubtractionPanel from './SubtractionPanel'
+import AddictionPanel from './panels/Addiction'
+import SubtractionPanel from './panels/Subtraction'
+import LayoutSettingPanel from './panels/Layout'
 import css from './index.module.css'
 
 const { Header } = Layout
@@ -20,7 +21,12 @@ export default function Setting() {
         <Header>
           <h2 style={{ color: "#fff" }}>Settings</h2>
         </Header>
-        <Collapse defaultActiveKey={['addition', 'subtraction']} onChange={onChange}>
+        <Collapse defaultActiveKey={['layout']}>
+          <Panel header="Layout" key="layout" >
+            <LayoutSettingPanel />
+          </Panel>
+        </Collapse>
+        <Collapse defaultActiveKey={['addition', 'subtraction']} onChange={onChange} >
           <Panel header="Addition" key="addition">
             <AddictionPanel />
           </Panel>

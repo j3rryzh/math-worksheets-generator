@@ -7,7 +7,7 @@ export default function Tr(props) {
   return (
     // Create a row with 5 data cells
     <tr>
-      {[...Array(5).keys()].map(i => {
+      {[...Array(10).keys()].map(i => {
         return <Cell key={nanoid()} operation={operation} />
       })}
     </tr>

@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/math-worksheets-generator/static/css/main.4e6e550d.css",
-    "main.js": "/math-worksheets-generator/static/js/main.7153ea89.js",
+    "main.js": "/math-worksheets-generator/static/js/main.2358ea6a.js",
     "index.html": "/math-worksheets-generator/index.html",
-    "main.4e6e550d.css.map": "/math-worksheets-generator/static/css/main.4e6e550d.css.map",
-    "main.7153ea89.js.map": "/math-worksheets-generator/static/js/main.7153ea89.js.map"
+    "main.2358ea6a.js.map": "/math-worksheets-generator/static/js/main.2358ea6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e6e550d.css",
-    "static/js/main.7153ea89.js"
+    "static/js/main.2358ea6a.js"
   ]
 }
