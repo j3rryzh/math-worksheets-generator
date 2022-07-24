@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
-// import Setting from './components/Setting'
-import Worksheet from './components/Worksheet'
-
+import React from 'react'
+import Generator from './features/Generator'
+import Worksheet from './features/Worksheet'
 import css from './App.module.css'
 
-export default class App extends Component {
-    render() {
-        return (
-            <div className={css.container}>
-                {/* <Setting /> */}
-                <div style={{ height: "50%", width: "100%" }}><Worksheet /></div>
-                <div style={{ height: "50%", width: "100%" }}><Worksheet /></div>
-            </div>
-        )
-    }
+
+export default function App() {
+  return (
+    <div className={css.appContainer}>
+      <Generator />
+      <div className={css.worksheetContent}>
+        <Worksheet />
+      </div>
+    </div>
+  )
 }

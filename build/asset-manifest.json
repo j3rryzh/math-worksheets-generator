@@ -1,13 +1,17 @@
 {
   "files": {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     "main.css": "/math-worksheets-generator/static/css/main.4e6e550d.css",
     "main.js": "/math-worksheets-generator/static/js/main.7153ea89.js",
+=======
+    "main.js": "/math-worksheets-generator/static/js/main.2358ea6a.js",
+>>>>>>> d3eb7103339cb135a3fe312f686997a3c3cf46f8
     "index.html": "/math-worksheets-generator/index.html",
-    "main.4e6e550d.css.map": "/math-worksheets-generator/static/css/main.4e6e550d.css.map",
-    "main.7153ea89.js.map": "/math-worksheets-generator/static/js/main.7153ea89.js.map"
+    "main.2358ea6a.js.map": "/math-worksheets-generator/static/js/main.2358ea6a.js.map"
   },
   "entrypoints": [
+<<<<<<< HEAD
     "static/css/main.4e6e550d.css",
     "static/js/main.7153ea89.js"
 =======
@@ -18,5 +22,8 @@
   "entrypoints": [
     "static/js/main.c2407a8e.js"
 >>>>>>> Stashed changes
+=======
+    "static/js/main.2358ea6a.js"
+>>>>>>> d3eb7103339cb135a3fe312f686997a3c3cf46f8
   ]
 }
