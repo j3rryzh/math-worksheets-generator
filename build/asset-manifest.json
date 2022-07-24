@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< Updated upstream
     "main.css": "/math-worksheets-generator/static/css/main.4e6e550d.css",
     "main.js": "/math-worksheets-generator/static/js/main.7153ea89.js",
     "index.html": "/math-worksheets-generator/index.html",
@@ -9,5 +10,13 @@
   "entrypoints": [
     "static/css/main.4e6e550d.css",
     "static/js/main.7153ea89.js"
+=======
+    "main.js": "/math-worksheets-generator/static/js/main.c2407a8e.js",
+    "index.html": "/math-worksheets-generator/index.html",
+    "main.c2407a8e.js.map": "/math-worksheets-generator/static/js/main.c2407a8e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c2407a8e.js"
+>>>>>>> Stashed changes
   ]
 }
